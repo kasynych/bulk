@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Accordeon Menu</title>
+	<link href="template.css" rel="stylesheet" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('ul li').mouseenter(function(){
+				$(this).find('ul').slideDown();				
+//				$(this).nextAll().has('ul:animated').find('ul').clearQueue();
+				$(this).nextAll().has('ul:animated').find('ul').stop(true,false);		
+				$(this).nextAll().find('ul').slideUp();
+			});
+
+			$('ul').mouseleave(function(){
+				$(this).find('ul').slideUp();
+				});
+		});
+	</script>
+</head>
+<body>
+<ul>
+	<li>
+		<a href="#">Site</a>
+		<ul>
+			<li><a href="#">Control Panel</a></li>
+			<li><a href="#">Site Profile</a></li>
+			<li><a href="#">Global Configuration</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="#">Users</a>
+		<ul>
+			<li><a href="#">Users Management</a></li>
+			<li><a href="#">Groups</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="#">Menus</a>
+		<ul>
+			<li><a href="#">Menu Manager</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="#">Content</a>
+		<ul>
+			<li><a href="#">Article Manager</a></li>
+			<li><a href="#">Category Manager</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="#">Components</a>
+	</li>
+	<li>
+		<a href="#">Extensions</a>
+		<ul>
+			<li><a href="#">Extension Manager</a></li>
+			<li><a href="#">Module Manager</a></li>
+		</ul>
+	</li>
+	<li>
+		<a href="#">Help</a>
+	</li>
+</ul>
+</body>
+</html>
